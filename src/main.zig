@@ -69,7 +69,7 @@ pub fn main() !void {
     // const fd = try shmOpen("/numbers", os.O.CREAT | os.O.RDWR, 0o666);
     // ---
     // defer _ = c.shm_unlink("/numbers");
-    // if (c.ftruncate(@intCast(fd), 1024) == -1) {
+    // if (c.ftruncate(@intCast(fd), @sizeOf(u32) * numbers.len) == -1) {
     //     return error.ftruncate_error;
     // }
     // const raw_data = try os.mmap(null, @sizeOf(u32) * ARRAY_LEN, os.PROT.READ | os.PROT.WRITE, os.MAP.SHARED, @intCast(fd), 0);

@@ -72,7 +72,7 @@ pub fn main() !void {
     // if (c.ftruncate(@intCast(fd), @sizeOf(u32) * numbers.len) == -1) {
     //     return error.ftruncate_error;
     // }
-    // const raw_data = try os.mmap(null, @sizeOf(u32) * ARRAY_LEN, os.PROT.READ | os.PROT.WRITE, os.MAP.SHARED, @intCast(fd), 0);
+    // const raw_data = try os.mmap(null, @sizeOf(u32) * numbers.len, os.PROT.READ | os.PROT.WRITE, os.MAP.SHARED, @intCast(fd), 0);
     // defer os.munmap(data);
 
     const data: *[numbers.len]u32 = @ptrCast(raw_data);

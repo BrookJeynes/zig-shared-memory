@@ -56,7 +56,7 @@ pub fn main() !void {
 
     const numbers = [_]u32{ 43, 23, 53, 82, 24, 92, 204, 18, 230, 200 };
 
-    const raw_data = try os.mmap(null, @sizeOf(u32) * numbers.len, os.PROT.READ | os.PROT.WRITE, os.MAP.SHARED | os.MAP.ANONYMOUS, -1, 0);
+    const raw_data = try os.mmap(null, @sizeOf(u32) * numbers.len, os.PROT.READ | os.PROT.WRITE, .{ .TYPE = .SHARED, .ANONYMOUS = true }, -1, 0);
     defer os.munmap(raw_data);
 
     // Or - if we need persistence

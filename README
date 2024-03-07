@@ -4,3 +4,5 @@ Zig Shared Memory Example
 A simple example of how to use shared memory in Zig.
 
 You can find the related Youtube video here: https://youtu.be/QEGihu2Z9pE
+
+Built for Version-0.12.0-dev.3158+1e67f5021
